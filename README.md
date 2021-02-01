@@ -90,8 +90,9 @@ All options except `cookies` are optional. They will fall back to the defaults, 
 {
   type: 'checkbox',         // Can be `checkbox` or `radio`.
   prefix: 'cookie-consent', // The prefix used for styling and identifiers.
-  append: true,             // By default the dialog is appended before the `main` tag or
-                            // as the first `body` child. Disable to append it yourself.
+  append: true,             // By default the dialog is appended before the first `body` child.
+                            // Disable to append it yourself or provide custom `appendTo`.
+  appendTo: null,           // Custom selector where to append the dialog instead of default.
   appendDelay: 500,         // The delay after which the cookie consent should be appended.
   acceptAllButton: false,   // Nudge users to accept all cookies when nothing is selected.
                             // Will select all checkboxes, or the top radio button.
