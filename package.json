@@ -18,7 +18,8 @@
     "url": "git+https://github.com/grrr-amsterdam/cookie-consent.git"
   },
   "dependencies": {
-    "@grrr/utils": "^2.3.0"
+    "@grrr/utils": "^2.3.0",
+    "cookie-storage": "^6.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",

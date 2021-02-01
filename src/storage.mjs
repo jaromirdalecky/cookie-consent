@@ -1,23 +1,19 @@
-import { supportsLocalStorage } from './utils';
+import { CookieStorage } from 'cookie-storage';
 
 /**
- * Store items in LocalStorage.
+ * Store items in CookieStorage.
  */
 const Storage = () => {
 
-  const storageModule = supportsLocalStorage() ? window.localStorage : {
-    attributes: {},
-    setItem(key, val) {
-      this.attributes[key] = val;
-    },
-    getItem(key) {
-      return this.attributes[key];
-    },
-  };
+  const cookieStorage = new CookieStorage({
+    path: '/',
+    expires: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
+    sameSite: 'Strict'
+  });
 
-  const get = (key, value) => storageModule.getItem(key, value);
-  const set = (key, value) => storageModule.setItem(key, value);
-  const has = key => storageModule.getItem(key) !== null;
+  const get = (key, value) => cookieStorage.getItem(key, value);
+  const set = (key, value) => cookieStorage.setItem(key, value);
+  const has = key => cookieStorage.getItem(key) !== null;
 
   return {
     get,
