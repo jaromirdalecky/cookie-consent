@@ -24,15 +24,19 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.1.1",
     "babel-jest": "^26.0.1",
     "eslint": "^7.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^23.0.2",
     "jest": "^26.0.1",
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "rollup": "^2.38.3"
   },
   "scripts": {
+    "build": "rollup -c",
     "test": "jest",
     "lint": "eslint . --ext=.js,.mjs"
   },
